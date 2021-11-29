@@ -1,11 +1,29 @@
 
 package DataStructuresAndAlgorithms.DataStructures.Arrays;
 
+interface IArray<T> {
+
+    public int size();
+
+    public T get(int index);
+
+    public void set(int index, T val);
+
+    public void add(T elem);
+
+    public T removeAt(int rm_index);
+
+    public boolean remove(T elem);
+
+    public boolean isEmpty();
+
+}
+
 /**
  * DynamicArrays : Integer DynamicArray
  */
 @SuppressWarnings("unchecked")
-public class DynamicArray<T> implements Iterable<T> {
+public class DynamicArray<T> implements IArray<T>, Iterable<T> {
 
     private T[] arr;
     private int len = 0; // length user thinks array is
